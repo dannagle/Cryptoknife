@@ -66,6 +66,16 @@
 #endif
 #define SETLOG(var) ui->resultTextEdit->clear(); appendResult(var);
 
+
+#ifdef __APPLE__
+#define LOGFILE QStandardPaths::writableLocation(QStandardPaths::DownloadLocation) + "/cryptoknife.log"
+#else
+#define LOGFILE "cryptoknife.log"
+#endif
+#define SETLOG(var) ui->resultTextEdit->clear(); appendResult(var);
+
+
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -165,7 +175,7 @@ MainWindow::MainWindow(QWidget *parent) :
 void MainWindow::logbuttondisplay()
 {
 
-    QFileInfo check_file("cryptoknife.log");
+    QFileInfo check_file(LOGFILE);
 
     quint64 filesize = check_file.size();
     QString deletetext = "Delete log (";
@@ -431,7 +441,7 @@ void MainWindow::appendResult(QString result)
     if(result.isEmpty()) return;
 
     if(ui->saveDownloadsLogCheck->isChecked()) {
-        QFile logFile("cryptoknife.log");
+        QFile logFile(LOGFILE);
         if(logFile.open(QFile::Append)) {
             logFile.write(QString("\r\n" + result).toLatin1());
             logFile.close();
@@ -1459,7 +1469,7 @@ void MainWindow::on_tripleDESVariantCombo_currentIndexChanged(const QString &arg
 
 void MainWindow::on_deleteFileButton_clicked()
 {
-    if(QFile::remove("cryptoknife.log")) {
+    if(QFile::remove(LOGFILE)) {
         statusBar()->showMessage("cryptoknife.log deleted", 3000);
     }
 
