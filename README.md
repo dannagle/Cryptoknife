@@ -82,4 +82,4 @@ GPL v2 or Later. [Contact me](https://cryptoknife.com/contact) if you require a 
 
 ## Copyright
 
-Cryptoknife is wholly owned and copyright &copy;  -  [@NagleCode](http://twitter.com/NagleCode) - [DanNagle.com](http://DanNagle.com)  -  [PacketSender.com](https://cryptoknife.com)
+Cryptoknife is wholly owned and copyright &copy;  -  [@NagleCode](http://twitter.com/NagleCode) - [DanNagle.com](http://DanNagle.com)  -  [Cryptoknife.com](https://cryptoknife.com)
