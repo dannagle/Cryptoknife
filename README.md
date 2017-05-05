@@ -15,8 +15,12 @@ Cryptoknife works by checking boxes for the calculations and then dragging files
 * You may also track this project on [GitHub](http://github.com/dannagle/Cryptoknife).
 * Secure Anonymous Email: [Contact me](https://cryptoknife.com/contact)
 
-## Settings
-for Windows, the settings are saved as `cryptoknife_settings.ini` inside the run-time directory. For Mac, settings are saved in `Library/Application Support/com.cryptoknife/cryptoknife_settings.ini`. Settings are saved when the app exits.
+## Settings and Log
+for Windows, the settings are saved as `cryptoknife_settings.ini` inside the run-time directory. The log file is `cryptoknife.log` is also in the run-time directory.
+
+For Mac, settings are saved in `Library/Application Support/com.cryptoknife/cryptoknife_settings.ini`. The log file is `cryptoknife.log` and is saved in your `Downloads` directory.
+
+Settings are saved when the app exits. The log is saved whenever the console is updated.
 
 
 ### Hashing
