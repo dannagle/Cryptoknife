@@ -1046,8 +1046,13 @@ void MainWindow::on_toClipBoardButton_clicked()
 
 void MainWindow::on_hashCalcButton_clicked()
 {
-    QTemporaryFile temporaryFile("cryptofile-temp");
 
+#ifdef Q_OS_MAC
+    //Mac cannot easily create files in app directory
+    QTemporaryFile temporaryFile;
+#else
+    QTemporaryFile temporaryFile("cryptofile-temp");
+#endif
 
     if(temporaryFile.open()) {
         QString tempText = ui->directInputHashEdit->toPlainText();
@@ -1087,15 +1092,19 @@ void MainWindow::on_hashCalcButton_clicked()
         appendResult(crypto.result);
     }
 
-
-
 }
 
 void MainWindow::on_encodeCalcButton_clicked()
 {
+#ifdef Q_OS_MAC
+    //Mac cannot easily create files in app directory
+    QTemporaryFile temporaryIn;
+    QTemporaryFile temporaryOut;
+#else
     QTemporaryFile temporaryIn("cryptofile-temp-in");
     QTemporaryFile temporaryOut("cryptofile-temp-in");
 
+#endif
 
     if(temporaryIn.open()) {
         QString tempText = ui->directInputEncodeEdit->toPlainText();
