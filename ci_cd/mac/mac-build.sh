@@ -28,6 +28,7 @@ pushd /tmp/
 rm -rf workspace || true
 mkdir workspace
 cd workspace
+ln -s /Users/dannagle/github/cryptopp700 cryptopp700
 git clone https://github.com/dannagle/Cryptoknife
 cd Cryptoknife/src
 #git checkout development
@@ -43,7 +44,7 @@ sed -i '' 's/<string>1.0<\/string>/<string>'$BUILD_VERSION'<\/string>/' Info.pli
 "/Users/dannagle/Qt/5.12.0/clang_64/bin/qmake" Cryptoknife.pro -spec macx-clang CONFIG+=x86_64
 make
 /Users/dannagle/Qt/5.12.0/clang_64/bin/macdeployqt Cryptoknife.app -appstore-compliant
-codesign --option runtime --deep --force --sign "Developer ID Application: NagleCode, LLC (C77T3Q8VPT)" Cryptoknife.app
+codesign --option runtime --deep --force --sign "A79C08A001C1D950E75B5C3150F5225E1CEE09DF" Cryptoknife.app
 
 rm -rf /Users/dannagle/github/cryptoknife/Cryptoknife.app || true
 mv Cryptoknife.app /Users/dannagle/github/Cryptoknife
