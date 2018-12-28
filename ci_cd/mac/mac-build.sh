@@ -40,9 +40,9 @@ sed -i '' '/BEGIN/,/END/c\
 echo "Replacing Info.plist with $BUILD_VERSION"
 sed -i '' 's/<string>1.0<\/string>/<string>'$BUILD_VERSION'<\/string>/' Info.plist
 
-"/Users/dannagle/Qt/5.11.1/clang_64/bin/qmake" Cryptoknife.pro -spec macx-clang CONFIG+=x86_64
+"/Users/dannagle/Qt/5.12.0/clang_64/bin/qmake" Cryptoknife.pro -spec macx-clang CONFIG+=x86_64
 make
-/Users/dannagle/Qt/5.11.1/clang_64/bin/macdeployqt Cryptoknife.app -appstore-compliant
+/Users/dannagle/Qt/5.12.0/clang_64/bin/macdeployqt Cryptoknife.app -appstore-compliant
 codesign --option runtime --deep --force --sign "Developer ID Application: NagleCode, LLC (C77T3Q8VPT)" Cryptoknife.app
 
 rm -rf /Users/dannagle/github/cryptoknife/Cryptoknife.app || true
@@ -57,7 +57,7 @@ mv newbuild.dmg /Users/dannagle/github/cryptoknife/Cryptoknife_v$BUILD_VERSION.d
 echo "Finished creating Cryptoknife_v$BUILD_VERSION.dmg"
 
 echo "Sending to Apple for notary"
-#xcrun altool --notarize-app -f /Users/dannagle/github/cryptoknife/Cryptoknife_v$BUILD_VERSION.dmg --primary-bundle-id 'com.cryptoknife.desktop'  -u ''$APPLE_UNAME'' -p ''$APPLE_PWORD''
+xcrun altool --notarize-app -f /Users/dannagle/github/cryptoknife/Cryptoknife_v$BUILD_VERSION.dmg --primary-bundle-id 'com.cryptoknife.desktop'  -u ''$APPLE_UNAME'' -p ''$APPLE_PWORD''
 
 
 popd
