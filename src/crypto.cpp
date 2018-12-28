@@ -10,50 +10,48 @@
 
 #define CRYPTOPP_ENABLE_NAMESPACE_WEAK 1
 
-#include "cryptocppinclude/cryptlib.h"
+#include <cryptlib.h>
 
-#include "cryptocppinclude/pubkey.h"
-#include "cryptocppinclude/gfpcrypt.h"
-#include "cryptocppinclude/eccrypto.h"
+#include <pubkey.h>
+#include <gfpcrypt.h>
+#include <eccrypto.h>
 
-#include "cryptocppinclude/smartptr.h"
-#include "cryptocppinclude/crc.h"
-#include "cryptocppinclude/adler32.h"
-#include "cryptocppinclude/md2.h"
-#include "cryptocppinclude/md4.h"
-#include "cryptocppinclude/md5.h"
-#include "cryptocppinclude/sha.h"
-#include "cryptocppinclude/base64.h"
-#include "cryptocppinclude/tiger.h"
-#include "cryptocppinclude/ripemd.h"
-#include "cryptocppinclude/whrlpool.h"
-#include "cryptocppinclude/hkdf.h"
-#include "cryptocppinclude/blake2.h"
-#include "cryptocppinclude/hmac.h"
-#include "cryptocppinclude/ttmac.h"
-#include "cryptocppinclude/integer.h"
-#include "cryptocppinclude/pwdbased.h"
-#include "cryptocppinclude/filters.h"
-#include "cryptocppinclude/files.h"
-#include "cryptocppinclude/hex.h"
-#include "cryptocppinclude/smartptr.h"
-#include "cryptocppinclude//channels.h"
+#include <smartptr.h>
+#include <crc.h>
+#include <adler32.h>
+#include <md2.h>
+#include <md4.h>
+#include <md5.h>
+#include <sha.h>
+#include <base64.h>
+#include <tiger.h>
+#include <ripemd.h>
+#include <whrlpool.h>
+#include <hkdf.h>
+#include <blake2.h>
+#include <hmac.h>
+#include <ttmac.h>
+#include <integer.h>
+#include <pwdbased.h>
+#include <filters.h>
+#include <files.h>
+#include <hex.h>
+#include <smartptr.h>
+#include <channels.h>
 
-#include "cryptocppinclude/aes.h"
-#include "cryptocppinclude/des.h"
-#include "cryptocppinclude/blowfish.h"
-#include "cryptocppinclude/modes.h"
-#include "cryptocppinclude/osrng.h"
-#include "cryptocppinclude/twofish.h"
+#include <aes.h>
+#include <des.h>
+#include <blowfish.h>
+#include <modes.h>
+#include <osrng.h>
+#include <twofish.h>
 
-#include "cryptocppinclude/pem.h"
-#include "cryptocppinclude/pem-com.h"
 
 #include <iostream>
 #include <sstream>
 #include <iomanip>
 
-#include "cryptocppinclude/validate.h"
+#include <validate.h>
 
 
 USING_NAMESPACE(CryptoPP)

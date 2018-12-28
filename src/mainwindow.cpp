@@ -164,7 +164,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     logbuttondisplay();
 
-    statusBar()->showMessage("Build date: " __DATE__, 3000);
+    statusBar()->showMessage("Version : " SW_VERSION, 3000);
 
     if(QFile::exists(SETTINGSFILE)) {
         processSettings(false);
@@ -177,7 +177,7 @@ void MainWindow::logbuttondisplay()
 
     QFileInfo check_file(LOGFILE);
 
-    quint64 filesize = check_file.size();
+    qint64 filesize = check_file.size();
     QString deletetext = "Delete log (";
     ui->deleteFileButton->setText(deletetext + QString::number(filesize) + " Bytes)");
     if(filesize > (1000)) {

@@ -10,7 +10,6 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Cryptoknife
 TEMPLATE = app
-win32:CONFIG+= static
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked as deprecated (the exact warnings
@@ -26,15 +25,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # Yeah, yeah... I'm using 2 crypto libraries.
 # crypto++ is easier to use
 
-win32:LIBS += -L"$$_PRO_FILE_PWD_/" -llibcryptopplib
 
+LIBS += -L$$PWD/../../cryptopp700/ -lcryptopp
+PRE_TARGETDEPS += $$PWD/../../cryptopp700/libcryptopp.a
+
+INCLUDEPATH += $$PWD/../../cryptopp700
+DEPENDPATH += $$PWD/../../cryptopp700
 
 
 macx:ICON = ckicons.icns
-
-
-
-macx: LIBS += -L$$PWD/../build-cryptocpplib-Desktop_Qt_5_8_0_clang_64bit-Release/ -llibcryptopplib.1.0.0
 
 
 win32:RC_FILE = ckicon.rc
@@ -58,7 +57,3 @@ FORMS    += mainwindow.ui \
 
 RESOURCES += \
     cryptokniferes.qrc
-
-
-macx: INCLUDEPATH += $$PWD/../build-cryptocpplib-Desktop_Qt_5_8_0_clang_64bit-Release
-macx: DEPENDPATH += $$PWD/../build-cryptocpplib-Desktop_Qt_5_8_0_clang_64bit-Release
