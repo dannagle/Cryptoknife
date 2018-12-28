@@ -46,7 +46,7 @@ make
 codesign --option runtime --deep --force --sign "Developer ID Application: NagleCode, LLC (C77T3Q8VPT)" Cryptoknife.app
 
 rm -rf /Users/dannagle/github/cryptoknife/Cryptoknife.app || true
-mv Cryptoknife.app /Users/dannagle/github/cryptoknife
+mv Cryptoknife.app /Users/dannagle/github/Cryptoknife
 
 rm -rf newbuild.dmg  || true
 "/Applications/DMG Canvas.app/Contents/Resources/dmgcanvas" "/Users/dannagle/github/cryptoknife/Cryptoknife.dmgCanvas" newbuild.dmg
